@@ -1,6 +1,12 @@
 name: Exercises Feedback
 description: Runs model to verify whether an exercise is correct or not
 
+inputs:
+  listdir:
+    required: true
+    default: ''
+    type: string
+
 runs:
   using: composite
   steps:
@@ -10,18 +16,11 @@ runs:
       with:
         python-version: "3.10"
 
-    # FIXIT 
-    # - uses: actions/checkout@v2
-    # - name: Changing Directory 
-    #   shell: bash
-    #   run: |
-    #     cd ${{github.action_path}}
-
     - name: Python Marker
       shell: bash
       run: |
-        cd ${{github.action_path}}
-        python python/marker1.py 
+        echo ${{ inputs.listdir }}
+        python $GITHUB_ACTION_PATH/python/marker1.py 
 
     - name: Review File
       shell: bash
