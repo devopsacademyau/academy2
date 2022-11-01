@@ -11,16 +11,20 @@ runs:
         python-version: "3.10"
     
     - uses: actions/checkout@v2
-    - name: Python Marker
+    - name: Changing Directory 
       shell: bash
       run: |
         cd ${{github.action_path}}
+
+    - name: Python Marker
+      shell: bash
+      run: |
         python python/marker1.py 
 
     - name: Review File (Matt)
       shell: bash
-      run: ./scripts/check_file.sh
+      run: scripts/check_file.sh
   
     - name: Check for Secret (Matt)
       shell: bash
-      run: ./scripts/check_secrets.sh
+      run: scripts/check_secrets.sh
