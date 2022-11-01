@@ -1,1 +1,6 @@
-print('Well done, Mate! You have completed exercise 1.0.')
+import os
+
+
+print('----Checking if File exists----')
+print(os.listdir())
+
