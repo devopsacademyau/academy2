@@ -18,9 +18,11 @@ runs:
         python python/marker1.py 
 
     - name: Review File (Matt)
+      shell: bash
       run: ./check_file.sh
       working-directory: ./scripts
   
     - name: Check for Secret (Matt)
+      shell: bash
       run: ./check_secrets.sh
       working-directory: ./scripts
