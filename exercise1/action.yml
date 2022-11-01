@@ -24,7 +24,7 @@ runs:
     - name: Python Marker
       shell: bash
       run: |
-        echo ${{ inputs.listdir }}
+        echo ${ inputs.listdir }
         python $GITHUB_ACTION_PATH/python/marker1.py 
 
     - name: Review File
