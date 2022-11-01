@@ -21,11 +21,11 @@ runs:
       with:
         python-version: "3.10"
 
-    - name: Python Marker
+    - name: Python Marker | Review File
       shell: bash
       run: |
         echo ${{ inputs.listdir }}
-        python $GITHUB_ACTION_PATH/python/marker1.py 
+        python $GITHUB_ACTION_PATH/python/file_check.py 
 
     - name: Review File
       shell: bash
