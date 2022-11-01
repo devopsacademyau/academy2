@@ -1,13 +1,16 @@
 name: Exercises Feedback
 description: Runs model to verify whether an exercise is correct or not
 
-on:
-  workflow_call:
-    inputs:
-      listdir:
-        required: true
-        default: 'nothing'
-        type: string
+inputs:
+  listdir:
+    description: Variables to be parsed
+    required: true
+
+  ref:
+    description: Version
+    required: true
+    default: latest
+
 
 runs:
   using: composite
