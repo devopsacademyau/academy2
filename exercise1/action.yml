@@ -19,10 +19,8 @@ runs:
 
     - name: Review File (Matt)
       shell: bash
-      run: ./check_file.sh
-      working-directory: ./scripts
+      run: ./scripts/check_file.sh
   
     - name: Check for Secret (Matt)
       shell: bash
-      run: ./check_secrets.sh
-      working-directory: ./scripts
+      run: ./scripts/check_secrets.sh
