@@ -15,12 +15,12 @@ runs:
       shell: bash
       run: |
         cd ${{github.action_path}}
-        python markers/marker1.py 
+        python python/marker1.py 
     
-    - name: Review (Matt)
+    - name: Review File (Matt)
       run: ./check_file.sh
-      # working-directory: ./scripts
+      working-directory: ./scripts
 
     - name: Check for Secret (Matt)
       run: ./check_secrets.sh
-      # working-directory: ./scripts
+      working-directory: ./scripts
