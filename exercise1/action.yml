@@ -19,7 +19,8 @@ runs:
     - name: Python Marker
       shell: bash
       run: |
-        python python/marker1.py 
+        pwd
+        python ./python/marker1.py 
 
     - name: Review File (Matt)
       shell: bash
