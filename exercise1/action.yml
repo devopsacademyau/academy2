@@ -9,23 +9,28 @@ runs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
-    
-    - uses: actions/checkout@v2
-    - name: Changing Directory 
-      shell: bash
-      run: |
-        cd ${{github.action_path}}
+
+    # FIXIT 
+    # - uses: actions/checkout@v2
+    # - name: Changing Directory 
+    #   shell: bash
+    #   run: |
+    #     cd ${{github.action_path}}
 
     - name: Python Marker
       shell: bash
       run: |
-        pwd
-        python ./python/marker1.py 
+        cd ${{github.action_path}}
+        python python/marker1.py 
 
-    - name: Review File (Matt)
+    - name: Review File
       shell: bash
-      run: scripts/check_file.sh
+      run: |
+        cd ${{github.action_path}}
+        scripts/check_file.sh
   
-    - name: Check for Secret (Matt)
+    - name: Check for Secret
       shell: bash
-      run: scripts/check_secrets.sh
+      run: |
+        cd ${{github.action_path}}
+        scripts/check_secrets.sh
