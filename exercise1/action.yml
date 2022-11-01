@@ -16,11 +16,12 @@ runs:
       run: |
         cd ${{github.action_path}}
         python python/marker1.py 
-    
+
+    - uses: actions/checkout@v2  
     - name: Review File (Matt)
       run: ./check_file.sh
       working-directory: ./scripts
-
+  
     - name: Check for Secret (Matt)
       run: ./check_secrets.sh
       working-directory: ./scripts
