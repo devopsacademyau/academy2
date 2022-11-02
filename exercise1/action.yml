@@ -21,18 +21,17 @@ runs:
       with:
         python-version: "3.10"
 
-    - name: Python Marker | Review File
+    - name: Python Marker | 1/2 | It is working
       shell: bash
       run: |
-        echo ${{ inputs.listdir }}
         python $GITHUB_ACTION_PATH/python/file_check.py 
 
-    - name: Review File
+    - name: Python Marker | 2/2 | It is working
       shell: bash
       run: |
-        $GITHUB_ACTION_PATH/scripts/check_file.sh
+        bash $GITHUB_ACTION_PATH/scripts/check_file.sh
   
-    - name: Check for Secret
+    - name: Check for Secret | It is not working
       shell: bash
       run: |
-        $GITHUB_ACTION_PATH/scripts/check_secrets.sh
+        bash $GITHUB_ACTION_PATH/scripts/check_secrets.sh

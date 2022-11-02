@@ -7,6 +7,8 @@ listdir = os.listdir('exercise1')
 listdir_system = os.popen("find .").read().split('\n')
 git_log = os.popen(f"git log -p -- {secret_filename}").read()
 
+print(listdir)
+
 #print(git_log)
 #print(listdir_system)
 
