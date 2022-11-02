@@ -17,12 +17,6 @@ runs:
       shell: bash
       run: |
         $GITHUB_ACTION_PATH/scripts/assert.sh > output.txt
-#TODO: STANDARDISE FORMAT FOR TEST OUTPUT AND HAVE A PARSER TO CREATE A MARKDOWN REPORT AS JOB SUMMARY
-
-    - name: Markdown Job Report
-      shell: bash
-#TODO: PARSER GOES HERE
-      run: |
         echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
         cat output.txt >> $GITHUB_STEP_SUMMARY
 
