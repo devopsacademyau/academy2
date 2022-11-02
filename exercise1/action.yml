@@ -36,5 +36,5 @@ runs:
     - name: Check for Secret
       shell: bash
       run: |
-        echo "- Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
+        echo '### Second Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
         bash $GITHUB_ACTION_PATH/scripts/check_secrets.sh
