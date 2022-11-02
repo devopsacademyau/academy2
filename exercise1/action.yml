@@ -24,9 +24,10 @@ runs:
     - name: Python Marker | 1/2 | It is working
       shell: bash
       run: |
+        echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
         python $GITHUB_ACTION_PATH/python/file_check.py 
 
-    - name: Python Marker | 2/2 | It is working
+    - name: Review File
       shell: bash
       run: |
         bash $GITHUB_ACTION_PATH/scripts/check_file.sh
