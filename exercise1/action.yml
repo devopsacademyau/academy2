@@ -1,40 +1,23 @@
 name: Exercises Feedback
 description: Runs model to verify whether an exercise is correct or not
 
-inputs:
-  listdir:
-    description: Variables to be parsed
-    required: true
+jobs:
+  Review Exercise 1:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Arrange
+          run: $GITHUB_ACTION_PATH/scripts/arrange.sh
 
-  ref:
-    description: Version
-    required: true
-    default: latest
+        - name: Act
+          run: $GITHUB_ACTION_PATH/scripts/act.sh
 
+        - name: Assert
+          run: |
+            $GITHUB_ACTION_PATH/scripts/assert.sh > output.txt
+            echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+            cat output.txt >> $GITHUB_STEP_SUMMARY
 
-runs:
-  using: composite
-  steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-
-    - name: Python Marker
-      shell: bash
-      run: |
-        echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
-        python $GITHUB_ACTION_PATH/python/file_check.py 
-        echo "- Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
-
-    - name: Review File
-      shell: bash
-      run: |
-        bash $GITHUB_ACTION_PATH/scripts/check_file.sh
-  
-    - name: Check for Secret
-      shell: bash
-      run: |
-        echo "- Lets add a bullet point" >> $GITHUB_STEP_SUMMARY
-        bash $GITHUB_ACTION_PATH/scripts/check_secrets.sh
+        - name: Clean up
+          run: |
+            cat output.txt
+            $GITHUB_ACTION_PATH/scripts/cleanup.sh
