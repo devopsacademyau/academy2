@@ -35,4 +35,5 @@ runs:
     - name: Check for Secret | It is not working
       shell: bash
       run: |
+        echo '### Second Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
         bash $GITHUB_ACTION_PATH/scripts/check_secrets.sh
