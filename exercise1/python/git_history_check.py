@@ -1,6 +1,6 @@
 import os
 
-print('----Checking if secret exists----')
+print('----Checking if secret exists within git history----')
 listdir = os.listdir('exercise1')
 
 if 'secrets.txt' in listdir:

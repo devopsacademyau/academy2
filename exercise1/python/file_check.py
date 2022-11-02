@@ -1,6 +1,6 @@
 import os
 
-secret_filename = "./secrets.txt"
+secret_filename = "./exercise1/secrets.txt"
 
 print('----Checking if File exists----')
 listdir = os.listdir('exercise1')
